@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -84,7 +86,11 @@
     <section id="contact" class="contact section">
 
       <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-        <iframe style="border:0; width: 100%; height: 300px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15085.4935925775!2d83.82075271738282!3d19.047313599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3c96658f8652ad%3A0x7dafcb1b8586f019!2sGIET%20University!5e0!3m2!1sen!2sin!4v1734037068984!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe style="border:0; width: 100%; height: 300px;"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15085.4935925775!2d83.82075271738282!3d19.047313599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3c96658f8652ad%3A0x7dafcb1b8586f019!2sGIET%20University!5e0!3m2!1sen!2sin!4v1734037068984!5m2!1sen!2sin"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div><!-- End Google Maps -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -92,145 +98,146 @@
         <script type="module">
           // Firebase configuration
           const firebaseConfig = {
-              apiKey: "AIzaSyDsWjCnzrzTJX2E7PcpSx4zXnOzJRkozYs",
-              authDomain: "novain-2024.firebaseapp.com",
-              projectId: "novain-2024",
-              storageBucket: "novain-2024.appspot.com",
-              messagingSenderId: "588797361086",
-              appId: "1:588797361086:web:1b805fb9cbad7fdef217ef",
+            apiKey: "AIzaSyDsWjCnzrzTJX2E7PcpSx4zXnOzJRkozYs",
+            authDomain: "novain-2024.firebaseapp.com",
+            projectId: "novain-2024",
+            storageBucket: "novain-2024.appspot.com",
+            messagingSenderId: "588797361086",
+            appId: "1:588797361086:web:1b805fb9cbad7fdef217ef",
           };
-  
+
           // Initialize Firebase
           import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js';
           import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js';
           import { getFirestore, setDoc, doc } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js';
-  
+
           const app = initializeApp(firebaseConfig);
           const auth = getAuth(app);
           const db = getFirestore(app);
-  
+
           // Form submission handling
           document.getElementById('contact-form').addEventListener('submit', function (e) {
-              e.preventDefault();
-  
-              const name = document.querySelector('input[name="name"]').value;
-              const email = document.querySelector('input[name="email"]').value;
-              const subject = document.querySelector('input[name="subject"]').value;
-              const message = document.querySelector('textarea[name="message"]').value;
-  
-              // Attempt to create a user
-              const password = generateRandomPassword();
-              createUserWithEmailAndPassword(auth, email, password)
-                  .then((userCredential) => {
-                      const user = userCredential.user;
-  
-                      // Send email verification
-                      sendEmailVerification(user)
-                          .then(() => {
-                              console.log("Verification email sent.");
-                              document.getElementById('feedback').innerHTML = `<p>Thank you for reaching out, ${name}. A confirmation email has been sent to ${email}.</p>`;
-                          })
-                          .catch((error) => {
-                              console.error("Error sending verification email:", error);
-                              alert("There was an issue sending the confirmation email. Please try again later.");
-                          });
-  
-                      // Store user data in Firestore
-                      storeUserData(user.uid, name, email, subject, message);
-  
-                      // Clear the form
-                      document.getElementById('contact-form').reset();
+            e.preventDefault();
+
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const subject = document.querySelector('input[name="subject"]').value;
+            const message = document.querySelector('textarea[name="message"]').value;
+
+            // Attempt to create a user
+            const password = generateRandomPassword();
+            createUserWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                const user = userCredential.user;
+
+                // Send email verification
+                sendEmailVerification(user)
+                  .then(() => {
+                    console.log("Verification email sent.");
+                    document.getElementById('feedback').innerHTML = `<p>Thank you for reaching out, ${name}. A confirmation email has been sent to ${email}.</p>`;
                   })
                   .catch((error) => {
-                      if (error.code === 'auth/email-already-in-use') {
-                          document.getElementById('feedback').innerHTML = `<p>This email is already registered. A verification email has been sent to ${email}.</p>`;
-                      } else {
-                          console.error(error.code, error.message);
-                          alert("Error during registration. Please try again.");
-                      }
+                    console.error("Error sending verification email:", error);
+                    alert("There was an issue sending the confirmation email. Please try again later.");
                   });
-          });
-  
-          function generateRandomPassword() {
-              return Math.random().toString(36).slice(-8); // Generates an 8-character random password
-          }
-  
-          function storeUserData(uid, name, email, subject, message) {
-              setDoc(doc(db, 'messages', uid), {
-                  name,
-                  email,
-                  subject,
-                  message,
-                  timestamp: new Date(),
-              })
-              .then(() => {
-                  console.log("User data saved successfully!");
+
+                // Store user data in Firestore
+                storeUserData(user.uid, name, email, subject, message);
+
+                // Clear the form
+                document.getElementById('contact-form').reset();
               })
               .catch((error) => {
-                  console.error("Error saving user data:", error);
+                if (error.code === 'auth/email-already-in-use') {
+                  document.getElementById('feedback').innerHTML = `<p>This email is already registered. A verification email has been sent to ${email}.</p>`;
+                } else {
+                  console.error(error.code, error.message);
+                  alert("Error during registration. Please try again.");
+                }
+              });
+          });
+
+          function generateRandomPassword() {
+            return Math.random().toString(36).slice(-8); // Generates an 8-character random password
+          }
+
+          function storeUserData(uid, name, email, subject, message) {
+            setDoc(doc(db, 'messages', uid), {
+              name,
+              email,
+              subject,
+              message,
+              timestamp: new Date(),
+            })
+              .then(() => {
+                console.log("User data saved successfully!");
+              })
+              .catch((error) => {
+                console.error("Error saving user data:", error);
               });
           }
-      </script>
-  </head>
-  <body>
-    <div class="row gy-4">
+        </script>
+        </head>
 
-      <div class="col-lg-4">
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-          <i class="bi bi-geo-alt flex-shrink-0"></i>
-          <div>
-            <h3>Recent Address</h3>
-            <p>GIET University</p>
-          </div>
-        </div><!-- End Info Item -->
+        <body>
+          <div class="row gy-4">
 
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-          <i class="bi bi-telephone flex-shrink-0"></i>
-          <div>
-            <h3>Call Us</h3>
-            <p>+91 85989 38589</p>
-          </div>
-        </div><!-- End Info Item -->
+            <div class="col-lg-4">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Recent Address</h3>
+                  <p>GIET University</p>
+                </div>
+              </div><!-- End Info Item -->
 
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-          <i class="bi bi-envelope flex-shrink-0"></i>
-          <div>
-            <h3>Email Us</h3>
-            <p>info@example.com</p>
-          </div>
-        </div><!-- End Info Item -->
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+91 85989 38589</p>
+                </div>
+              </div><!-- End Info Item -->
 
-      </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@example.com</p>
+                </div>
+              </div><!-- End Info Item -->
 
-      <div class="col-lg-8">
-          <form id="contact-form" class="php-email-form">
-              <div class="row gy-4">
-  
+            </div>
+
+            <div class="col-lg-8">
+              <form id="contact-form" class="php-email-form">
+                <div class="row gy-4">
+
                   <div class="col-md-6">
-                      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                   </div>
-  
+
                   <div class="col-md-6">
-                      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                   </div>
-  
+
                   <div class="col-md-12">
-                      <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                   </div>
-  
+
                   <div class="col-md-12">
-                      <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
                   </div>
-  
+
                   <div class="col-md-12 text-center">
-                      <div id="feedback"></div>
-                      <button type="submit">Send Message</button>
+                    <div id="feedback"></div>
+                    <button type="submit">Send Message</button>
                   </div>
-              </div>
-          </form>
-      </div>
+                </div>
+              </form>
+            </div>
 
-        </div>
+          </div>
 
       </div>
 
@@ -287,20 +294,20 @@
           <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
           <form id="newsletterForm">
             <div class="newsletter-form">
-              
-            <input type="email" name="email" placeholder="Enter your email" required>
+
+              <input type="email" name="email" placeholder="Enter your email" required>
               <input type="submit" value="Subscribe">
             </div>
             <div id="message"></div>
           </form>
         </div>
-        
+
         <script>
           document.getElementById('newsletterForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const formData = new FormData(this);
-            const url = "AKfycbwErR4WBfKuC3YkP6ooGSxtCO6iOAqMHbnDT6jEPIxg"; // Replace with your Web App URL
-        
+            const url = "AKfycbzsmqWE3m0vLUr8y5Bh1OXZASDvcIlVU1huE56REn1dOaedQSfe9mClTcvp0fybQftsTg"; // Replace with your Web App URL
+
             fetch(url, {
               method: "POST",
               body: formData,
@@ -315,29 +322,30 @@
           });
         </script>
 
-    <div class="container copyright text-center mt-4">
-      <p style="font-size: 1rem; color: #6c757d; margin: 0;">
-        &copy; <span class="text-dark">Copyright</span>
-        <strong class="sitename" style="color: #007bff; padding: 0 5px;">NovaIN</strong>
-        <span class="text-dark">All Rights Reserved</span>.
-        <!-- <a href="/terms-and-conditions" class="text-primary"
+        <div class="container copyright text-center mt-4">
+          <p style="font-size: 1rem; color: #6c757d; margin: 0;">
+            &copy; <span class="text-dark">Copyright</span>
+            <strong class="sitename" style="color: #007bff; padding: 0 5px;">NovaIN</strong>
+            <span class="text-dark">All Rights Reserved</span>.
+            <!-- <a href="/terms-and-conditions" class="text-primary"
           style="text-decoration: none; font-weight: bold; margin-left: 5px;">
           Terms & Conditions
         </a> -->
-      </p>
-      <div class="credits">
-        <p style="font-size: 1.2rem; color: #333;">
-          Made with <span style="color: #e25555;">&#10084;</span> by
-          <a  style="text-decoration: none; color: #007bff; font-weight: bold;">NovaIN
-            Developers</a>
-        </p>
-      </div>
-    </div>
+          </p>
+          <div class="credits">
+            <p style="font-size: 1.2rem; color: #333;">
+              Made with <span style="color: #e25555;">&#10084;</span> by
+              <a style="text-decoration: none; color: #007bff; font-weight: bold;">NovaIN
+                Developers</a>
+            </p>
+          </div>
+        </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
