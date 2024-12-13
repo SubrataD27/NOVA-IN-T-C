@@ -89,66 +89,146 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <script type="module">
+          // Firebase configuration
+          const firebaseConfig = {
+              apiKey: "AIzaSyDsWjCnzrzTJX2E7PcpSx4zXnOzJRkozYs",
+              authDomain: "novain-2024.firebaseapp.com",
+              projectId: "novain-2024",
+              storageBucket: "novain-2024.appspot.com",
+              messagingSenderId: "588797361086",
+              appId: "1:588797361086:web:1b805fb9cbad7fdef217ef",
+          };
+  
+          // Initialize Firebase
+          import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js';
+          import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js';
+          import { getFirestore, setDoc, doc } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js';
+  
+          const app = initializeApp(firebaseConfig);
+          const auth = getAuth(app);
+          const db = getFirestore(app);
+  
+          // Form submission handling
+          document.getElementById('contact-form').addEventListener('submit', function (e) {
+              e.preventDefault();
+  
+              const name = document.querySelector('input[name="name"]').value;
+              const email = document.querySelector('input[name="email"]').value;
+              const subject = document.querySelector('input[name="subject"]').value;
+              const message = document.querySelector('textarea[name="message"]').value;
+  
+              // Attempt to create a user
+              const password = generateRandomPassword();
+              createUserWithEmailAndPassword(auth, email, password)
+                  .then((userCredential) => {
+                      const user = userCredential.user;
+  
+                      // Send email verification
+                      sendEmailVerification(user)
+                          .then(() => {
+                              console.log("Verification email sent.");
+                              document.getElementById('feedback').innerHTML = `<p>Thank you for reaching out, ${name}. A confirmation email has been sent to ${email}.</p>`;
+                          })
+                          .catch((error) => {
+                              console.error("Error sending verification email:", error);
+                              alert("There was an issue sending the confirmation email. Please try again later.");
+                          });
+  
+                      // Store user data in Firestore
+                      storeUserData(user.uid, name, email, subject, message);
+  
+                      // Clear the form
+                      document.getElementById('contact-form').reset();
+                  })
+                  .catch((error) => {
+                      if (error.code === 'auth/email-already-in-use') {
+                          document.getElementById('feedback').innerHTML = `<p>This email is already registered. A verification email has been sent to ${email}.</p>`;
+                      } else {
+                          console.error(error.code, error.message);
+                          alert("Error during registration. Please try again.");
+                      }
+                  });
+          });
+  
+          function generateRandomPassword() {
+              return Math.random().toString(36).slice(-8); // Generates an 8-character random password
+          }
+  
+          function storeUserData(uid, name, email, subject, message) {
+              setDoc(doc(db, 'messages', uid), {
+                  name,
+                  email,
+                  subject,
+                  message,
+                  timestamp: new Date(),
+              })
+              .then(() => {
+                  console.log("User data saved successfully!");
+              })
+              .catch((error) => {
+                  console.error("Error saving user data:", error);
+              });
+          }
+      </script>
+  </head>
+  <body>
+    <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Recent Address</h3>
-                <p>GIET University</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+91 85989 38589</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Recent Address</h3>
+            <p>GIET University</p>
           </div>
+        </div><!-- End Info Item -->
 
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>+91 85989 38589</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>info@example.com</p>
+          </div>
+        </div><!-- End Info Item -->
+
+      </div>
+
+      <div class="col-lg-8">
+          <form id="contact-form" class="php-email-form">
               <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
+  
+                  <div class="col-md-6">
+                      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  </div>
+  
+                  <div class="col-md-6">
+                      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                  </div>
+  
+                  <div class="col-md-12">
+                      <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                  </div>
+  
+                  <div class="col-md-12">
+                      <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                  </div>
+  
+                  <div class="col-md-12 text-center">
+                      <div id="feedback"></div>
+                      <button type="submit">Send Message</button>
+                  </div>
               </div>
-            </form>
-          </div><!-- End Contact Form -->
+          </form>
+      </div>
 
         </div>
 
