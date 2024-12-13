@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +46,7 @@
           <li><a href="index.html">Home<br></a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="courses.html" class="active">Courses</a></li>
-          
+
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -67,16 +69,7 @@
               <h4 style="font-size: 1.4rem; color: #007bff; font-weight: bold; margin-bottom: 10px;">
                 Industry-Ready Skill Roadmaps
               </h4>
-              <!-- <p style="margin: 0; line-height: 1.6; font-size: 1rem;">
-                We empower college students wi
-              </p> -->
-<!--               
-              <ul class="bullet-points">
-                  <li>Comprehensive skill development guidelines</li>
-                  <li>Industry-aligned learning paths</li>
-                  <li>Practical, job-market-focused resources</li>
-                  <li>Career transformation strategies</li>
-              </ul> -->
+
             </div>
           </div>
         </div>
@@ -91,164 +84,240 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <!-- Courses Section -->
-    <section id="courses" class="courses section">
+    <section id="courses" class="courses section"
+      style="padding: 60px 0; background-color: #f8f9fa; font-family: 'Poppins', sans-serif;">
+      <div class="container" style="max-width: 1200px; margin: auto;">
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
-      <div class="container">
+          <!-- Full Stack Development -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <div class="course-item" style="text-align: center;">
+              <img src="assets/img/fullstack.jpg" class="img-fluid" alt="Full Stack Development"
+                style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+                onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+              <div class="course-content" style="padding: 20px;">
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="course-item">
-              <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Web Development</p>
-                  
-                </div>
-
-                <h3><a href="course-details.html">Website Design</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                
+                <h3
+                  style="font-size: 1.5rem; font-weight: 700; color: #007bff; text-transform: uppercase; margin-bottom: 15px; transition: color 0.3s ease;"
+                  onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                  <a href="course-details.html" style="text-decoration: none; color: inherit;">Full Stack
+                    Development</a>
+                </h3>
+                <p class="description" style="font-size: 1rem; color: #6c757d; line-height: 1.6;">Master both frontend
+                  and backend development with our comprehensive Full Stack Development program.</p>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="course-item">
-              <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Marketing</p>
-                  
-                </div>
+          <!-- Frontend Development -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <div class="course-item" style="text-align: center;">
+              <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+                style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+                onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+              <div class="course-content" style="padding: 20px;">
 
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                
+                <h3
+                  style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                  onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                  <a href="course-details.html" style="text-decoration:none;color:inherit;">Frontend Development</a>
+                </h3>
+                <p class="description" style="font-size:.9rem;color:#6c757d;">Create stunning user interfaces with our
+                  specialized Frontend Development training program.</p>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  
-                </div>
+          <!-- AI/ML -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <div class="course-item" style="text-align: center;">
+              <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+                style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+                onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+              <div class="course-content" style="padding: 20px;">
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-               
+                <h3
+                  style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                  onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                  <a href="course-details.html" style="text-decoration:none;color:inherit;">AI/ml</a>
+                </h3>
+                <p class="description" style="font-size:.9rem;color:#6c757d;">Dive deep into the
+                  world of Artificial Intelligence and Machine Learning with expert guidance.</p>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  
-                </div>
+          <!-- Data Science -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <div class="course-item" style="text-align: center;">
+              <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+                style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+                onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+              <div class="course-content" style="padding: 20px;">
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-               
+                <h3
+                  style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                  onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                  <a href="course-details.html" style="text-decoration:none;color:inherit;">Data Science</a>
+                </h3>
+                <p class="description" style="font-size:.9rem;color:#6c757d;">Learn to analyze and
+                  visualize data with advanced techniques and tools.</p>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
+          <!-- Android Development -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <div class="course-item" style="text-align: center;">
+              <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+                style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+                onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+              <div class="course-content" style="padding: 20px;">
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  
-                </div>
-
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-               
+                <h3
+                  style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                  onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                  <a href="course-details.html" style="text-decoration:none;color:inherit;">Android Development</a>
+                </h3>
+                <p class="description" style="font-size:.9rem;color:#6c757d;">Create mobile
+                  applications for Android platforms with modern tools and frameworks.</p>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  
-                </div>
+          <!-- Cyber Security -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <div class="course-item" style="text-align: center;">
+              <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+                style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+                onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+              <div class="course-content" style="padding: 20px;">
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-               
+                <h3
+                  style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                  onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                  <a href="course-details.html" style="text-decoration:none;color:inherit;">Cyber Security</a>
+                </h3>
+                <p class="description" style="font-size:.9rem;color:#6c757d;">Protect data and
+                  systems with advanced cybersecurity practices and techniques.</p>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  
-                </div>
+          <!-- Graphics Designing -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <div class="course-item" style="text-align: center;">
+              <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+                style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+                onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+              <div class="course-content" style="padding: 20px;">
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-               
+                <h3
+                  style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                  onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                  <a href="course-details.html" style="text-decoration:none;color:inherit;">Graphics Designing</a>
+                </h3>
+                <p class="description" style="font-size:.9rem;color:#6c757d;"> Explore user-centered design,
+                  prototyping, and usability testing to create intuitive digital
+                  experiences.
+                </p>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  
-                </div>
+          <!-- <ui/ux Designer></ui> -->
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-               
-              </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+          style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+          onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+          <div class="course-item" style="text-align: center;">
+            <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+              style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+              onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+            <div class="course-content" style="padding: 20px;">
+
+              <h3
+                style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                <a href="course-details.html" style="text-decoration:none;color:inherit;">IOT</a>
+              </h3>
+              <p class="description" style="font-size:.9rem;color:#6c757d;"> Explore user-centered design,
+                prototyping, and usability testing to create intuitive digital
+                experiences.
+              </p>
             </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  
-                </div>
-
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-               
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          
-
+          </div>
         </div>
 
-      </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+          style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radus: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" 
+          onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+          <div class="course-item" style="text-align: center;">
+            <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+              style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+              onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+            <div class="course-content" style="padding: 20px;">
 
-    </section><!-- /Courses Section -->
+              <h3
+                style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                <a href="course-details.html" style="text-decoration:none;color:inherit;">blockchain</a>
+              </h3>
+              <p class="description" style="font-size:.9rem;color:#6c757d;"> Dive into the world of blockchain to create secure, decentralized applications and explore cryptocurrencies and smart contracts
+              </p>
+            </div>
+          </div>
+        </div> 
+
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+          style="transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+          onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.2)';"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+          <div class="course-item" style="text-align: center;">
+            <img src="assets/img/frontend.jpg" class="img-fluid" alt="Frontend Development"
+              style="width: 100%; height: 200px; object-fit: cover; transition: filter 0.3s ease;"
+              onmouseover="this.style.filter='brightness(90%)';" onmouseout="this.style.filter='brightness(100%)';">
+            <div class="course-content" style="padding: 20px;">
+
+              <h3
+                style="font-size: 1.5rem; font-weight: 700; color:#007bff;text-transform:uppercase;margin-bottom:15px;transition:.3s ease;"
+                onmouseover="this.style.color='#0056b3';" onmouseout="this.style.color='#007bff';">
+                <a href="course-details.html" style="text-decoration:none;color:inherit;">cloud</a>
+              </h3>
+              <p class="description" style="font-size:.9rem;color:#6c757d;"> Learn to design, deploy, and manage applications on leading cloud platforms with advanced tools and practices.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        </div> <!-- End of Row -->
+      </div> <!-- End of Container -->
+    </section>
+
+
 
   </main>
 
@@ -332,7 +401,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
