@@ -257,17 +257,35 @@
                 <div class="col-lg-4 col-md-12 footer-newsletter">
                     <h4>Our Newsletter</h4>
                     <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-                    <form action="forms/newsletter.php" method="post" class="php-email-form">
-                        <div class="newsletter-form"><input type="email" name="email"><input type="submit"
-                                value="Subscribe"></div>
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                    <form id="newsletterForm">
+                      <div class="newsletter-form">
+                        
+                      <input type="email" name="email" placeholder="Enter your email" required>
+                        <input type="submit" value="Subscribe">
+                      </div>
+                      <div id="message"></div>
                     </form>
-                </div>
-
-            </div>
-        </div>
+                  </div>
+                  
+                  <script>
+                    document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+                      e.preventDefault();
+                      const formData = new FormData(this);
+                      const url = "AKfycbwErR4WBfKuC3YkP6ooGSxtCO6iOAqMHbnDT6jEPIxg"; // Replace with your Web App URL
+                  
+                      fetch(url, {
+                        method: "POST",
+                        body: formData,
+                      })
+                        .then(response => response.text())
+                        .then(data => {
+                          document.getElementById('message').innerText = "Subscription successful! Check your email for confirmation.";
+                        })
+                        .catch(error => {
+                          document.getElementById('message').innerText = "There was an error. Please try again.";
+                        });
+                    });
+                  </script>
 
         <div class="container copyright text-center mt-4">
             <p style="font-size: 1rem; color: #6c757d; margin: 0;">
