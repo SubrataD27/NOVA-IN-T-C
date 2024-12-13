@@ -1,7 +1,7 @@
-#Novain Training and Consultancy Services Website
+#NovaIN Training and Consultancy Services Website
 
 ## Project Overview
-This project involves developing a professional website for **Novain Training and Consultancy Services**. The website aims to showcase the company's services, training programs, consultancy offerings, and provide users with an intuitive platform to explore and engage with the company.
+This project involves developing a professional website for **NovaIN Training and Consultancy Services**. The website aims to showcase the company's services, training programs, consultancy offerings, and provide users with an intuitive platform to explore and engage with the company.
 
 ### Key Features
 - **Home Page**: Overview of the company and services.
