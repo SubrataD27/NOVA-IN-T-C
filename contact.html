@@ -362,6 +362,30 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable Ctrl + U (view source) and other inspect element shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener('keydown', function (e) {
+        // Prevent Ctrl + U
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+
+        // Prevent F12 (Developer Tools)
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+
+        // Prevent Ctrl + Shift + I (Developer Tools)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+    });
+</script>
 
 </body>
 
