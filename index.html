@@ -30,8 +30,190 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <script src="https://cdn.vercel-insights.com/v1/script.js" async></script>
-
-
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0d14;
+    }
+  
+    /* Preloader Styles */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, #0a0d14, #001f3f, #004080);
+      z-index: 9999;
+      overflow: hidden;
+    }
+  
+    .branding {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-bottom: 30px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(0, 123, 255, 0.8);
+      animation: glowText 2s ease-in-out infinite;
+    }
+  
+    @keyframes glowText {
+      0%, 100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(0, 123, 255, 0.8); }
+      50% { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(0, 123, 255, 1); }
+    }
+  
+    .loader {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+  
+    .loader .circle {
+      position: absolute;
+      inset: 0;
+      border: 6px solid transparent;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+    }
+  
+    .loader .circle:nth-child(1) {
+      border-top: 6px solid #007bff;
+      animation-duration: 2s;
+    }
+  
+    .loader .circle:nth-child(2) {
+      border-top: 6px solid #00ff88;
+      inset: 10px;
+      animation-duration: 1.5s;
+    }
+  
+    .loader .circle:nth-child(3) {
+      border-top: 6px solid #ff0077;
+      inset: 20px;
+      animation-duration: 1s;
+    }
+  
+    @keyframes spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+  
+    .progress-container {
+      margin-top: 40px;
+      width: 300px;
+    }
+  
+    .progress-bar {
+      position: relative;
+      height: 8px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+  
+    .progress-bar .progress {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #007bff, #00ff88);
+      animation: loadingBar 4s ease-in-out infinite;
+    }
+  
+    @keyframes loadingBar {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; }
+    }
+  
+    .loading-text {
+      margin-top: 10px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffffff;
+      animation: fadeInOut 2s ease-in-out infinite;
+    }
+  
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+  
+    .background-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+  
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 6s linear infinite;
+    }
+  
+    @keyframes float {
+      0% { transform: translate(0, 0); opacity: 1; }
+      100% { transform: translate(150px, 150px); opacity: 0; }
+    }
+  </style>
+  </head>
+  <body>
+  <div class="preloader">
+    <div class="branding">NovaIN</div>
+    <div class="loader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+    <div class="loading-text">Initializing...</div>
+    <div class="background-particles"></div>
+  </div>
+  
+  <script>
+    const backgroundParticles = document.querySelector('.background-particles');
+  
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDuration = Math.random() * 5 + 2 + 's';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      backgroundParticles.appendChild(particle);
+    }
+  
+    const loadingText = document.querySelector('.loading-text');
+    const loadingMessages = ['Initializing...', 'Loading Data...', 'Connecting...', 'Finalizing...', 'Launching NovaIN!'];
+    let messageIndex = 0;
+  
+    setInterval(() => {
+      loadingText.textContent = loadingMessages[messageIndex];
+      messageIndex = (messageIndex + 1) % loadingMessages.length;
+    }, 2000);
+  
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.querySelector('.preloader');
+        preloader.style.transition = 'opacity 1s ease';
+        preloader.style.opacity = 0;
+        setTimeout(() => preloader.remove(), 1000);
+      }, 4000);
+    });
+  </script>
 </head>
 
 <body class="index-page">
